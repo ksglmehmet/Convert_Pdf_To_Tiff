@@ -2,7 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+Convert_Pdf_To_Tiff.code-workspace
+paths.py
 # C extensions
 *.so
 
