@@ -6,7 +6,7 @@ Convert_Pdf_To_Tiff.code-workspace
 paths.py
 # C extensions
 *.so
-
+tiff_2023.xlsx
 # Distribution / packaging
 .Python
 build/

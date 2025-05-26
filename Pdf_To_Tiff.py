@@ -4,6 +4,9 @@
 from pdf2image import convert_from_path
 from PIL import Image
 import paths as ph # Dizin bilgilerimi import ediyorum. 
+import os
+import pandas as pd
+import openpyxl
 
 Image.MAX_IMAGE_PIXELS = None # Max pixels sınırı defaultta var. Eğer bu sınırı geçen pdf leriniz varsa, Tiff formatına dönüşemeyecek. Bu sebep ile bu sınırı kaldırıyoruz.
 
@@ -32,3 +35,14 @@ for i in range(20230000091494, 20230000098798):
 # Range aralığında olmayan belgelerim olduğu için, hata verecek pdf isimlerinde, try-except bloğu ile hata alındığında devam edilmesini sağlıyorum.
 # Not: Kodun çalışabilmesi için pdf2image ve Pillow kütüphanelerinin kurulu olması gerekmektedir.
 # Not: Kodun çalışabilmesi için poppler kütüphanesinin bilgisayarınızda kurulu olması gerekmektedir.
+
+
+# Klasördeki belgelerin isimlerini yazdırma
+klasor_yolu = ph.dosya  # veya "./" gibi göreli bir yol da olabilir
+
+for dosya in os.listdir(klasor_yolu):
+    if dosya.lower().endswith(('.tiff', '.pdf')):
+        print(dosya)
+
+tiffler = pd.DataFrame(os.listdir(klasor_yolu))
+tiffler.to_excel("tiff_2023.xlsx")
