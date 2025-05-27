@@ -38,7 +38,7 @@ for i in range(20230000091494, 20230000098798):
 
 
 # Klasördeki belgelerin isimlerini yazdırma
-klasor_yolu = ph.dosya  # veya "./" gibi göreli bir yol da olabilir
+klasor_yolu = ph.dosya # veya "./" gibi göreli bir yol da olabilir
 
 for dosya in os.listdir(klasor_yolu):
     if dosya.lower().endswith(('.tiff', '.pdf')):
